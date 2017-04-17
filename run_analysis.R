@@ -21,6 +21,7 @@
 ## 7. Create a new data set with just the columns referencing mean or standard deviation.
 ## 8. Taking the data set from 7, and grouping it by subject and activity.
 ## 9. Then getting the mean on each column for each subject/activity combination, outputing the data.
+## 10. Write the subset data and the average data to output files.
 
 ## produceCleanedData is the primary function called to output cleaned data files
 ## 
