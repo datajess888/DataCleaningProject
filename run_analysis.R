@@ -1,6 +1,26 @@
 ## Getting and Cleaning Data Course Project
 ## This takes the raw data, combines test and train, tidies it, subsets only the mean and standard deviation values,
 ## and then computes the average of those values grouped by subject and activity type.
+##
+## Required packages: dplyr, data.table
+##
+## Pseudocode explanation of what is done
+## 1. Read in the activities, updating column names to activityid and activityname
+## 2. Read in the features, updating column names to featureid and featurename. Process featurename
+##      column by removing "(" and ")", changing "-" and "," to "_", lowercasing feature names. 
+## 3. Process test files by doing the following:
+##      a. Reading in subject_test file, naming column as subjectid
+##      b. Reading in X_test file, changing column names to the cleaned feature names.
+##      c. Reading in Y_test file, changing column name to activityid.
+##      d. Joining the Y_test data with the activities data to get an activity name.
+##      e. Combining the subject and activity name for each row with the measurements for each activity
+## 4. Repeating the steps in 3 for the training data.
+## 5. Appending the rows of the training data to the test data.
+## 6. Identifying which columns are mean or standard deviations (ignoring meanFreq or Mean labeled 
+##      variables)
+## 7. Create a new data set with just the columns referencing mean or standard deviation.
+## 8. Taking the data set from 7, and grouping it by subject and activity.
+## 9. Then getting the mean on each column for each subject/activity combination, outputing the data.
 
 ## produceCleanedData is the primary function called to output cleaned data files
 ## 
